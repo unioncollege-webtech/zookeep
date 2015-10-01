@@ -2,7 +2,7 @@ Zookeep
 =======
 
 Create a list of zoo animals using Objects and Arrays, and create a web page to  
-display their information information
+display their information.
 
 
 
