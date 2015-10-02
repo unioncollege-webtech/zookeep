@@ -118,3 +118,25 @@ var animals = [{
     age: 11,
     image: "Polar_bear.jpg"
 }];
+<<<<<<< HEAD
+=======
+
+var table = document.getElementById("main");
+for (var i = 0; i < animals.length; i++) {
+
+    var row = table.insertRow(-1);
+    
+    var animal_name = row.insertCell(0);
+    var common_name = row.insertCell(1);
+    var species = row.insertCell(2);
+    var loc = row.insertCell(3);
+    var age = row.insertCell(4);
+    var image = row.insertCell(5);
+
+    animal_name.innerHTML = animals[i].name;
+    common_name.innerHTML = animals[i].common_name;
+    species.innerHTML = animals[i].species;
+    loc.innerHTML = animals[i].location;
+    age.innerHTML = animals[i].age;
+    image.innerHTML = animals[i].image;
+}
