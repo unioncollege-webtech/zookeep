@@ -9,7 +9,7 @@ function getJSON (path, callback) {
   xhr.send()
 }
 var container = document.querySelector('#content')
-getJSON('/data/data.json', function (response) {
+getJSON('data/data.json', function (response) {
   response.forEach(function (obj, idx, arr) {
     var section = document.createElement('section')
     var title = document.createElement('h2')
