@@ -13,6 +13,7 @@ getJSON('data/data.json', function (response) {
   response.forEach(function (obj, idx, arr) {
     var section = document.createElement('section')
     var title = document.createElement('h2')
+    var imgContainer = document.createElement('div')
     var img = document.createElement('img')
     var details = document.createElement('ul')
     var common = document.createElement('li')
@@ -31,9 +32,10 @@ getJSON('data/data.json', function (response) {
     details.appendChild(species)
     details.appendChild(location)
     details.appendChild(age)
+    imgContainer.appendChild(img)
 
     section.appendChild(title)
-    section.appendChild(img)
+    section.appendChild(imgContainer)
     section.appendChild(details)
 
     container.appendChild(section)
