@@ -21,7 +21,7 @@ getJSON('/data/data.json', function (response) {
     var age = document.createElement('li')
 
     title.innerHTML = obj.Name
-    img.setAttribute('src', '/images/' + obj.Image)
+    img.setAttribute('src', 'images/' + obj.Image)
     common.innerHTML = '<span>Common Name:</span> ' + obj['Common Name']
     species.innerHTML = '<span>Species:</span> ' + obj.Species
     location.innerHTML = '<span>Location:</span> ' + obj.Location
