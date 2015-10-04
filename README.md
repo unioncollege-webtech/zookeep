@@ -86,7 +86,7 @@ to the `displayFeaturedAnimal()` function.
 
 ### Map, sort, and display animal ages
 
-Use [`map()`][array.map] to create a new array containing **only** the animals 
+Use [`map()`][array.map] to create a new array containing **only** the animals’ 
 `name`, `commonName` and `age`, and store the new array in a variable called
 `ages`. Use [`sort()`][array.sort] to sort `ages` based on the animals’ age in 
 ascending order (smallest to largest) . Call the
