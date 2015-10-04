@@ -1,6 +1,7 @@
 Zookeep
 =======
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/unioncollege-webtech/zookeep?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 **<span style="background-color:#ffa">
 Hey, congratulations for taking the  initiative to seek and find this 
@@ -11,12 +12,16 @@ tight and you'll receive an email when it is available.
 Summary
 -------
 
-Create a list of zoo animals using Objects and Arrays, and create a web page to  
+Create a list of zoo animals using Objects and Arrays, and create a web page to
 display their information.
 
 
 Description
 -----------
+
+> _Please note: you will be doing your work on the `gh-pages` branch (see
+instructions [below](#completing-and-submitting-the-assignment)).
+If you clone the repository and have no files, remember to run `git checkout gh-pages`._
 
 ### Create `zoo.js` with the `animals` array
 
@@ -44,9 +49,12 @@ Description
   }
   ```
 
-  
 ### Use Array methods to sort, find, and filter the elements
 
+In this assignment, we'll be creating a homepage for a zoo. This 
+homepage will have several features including a gallery of zoo animals,
+a "featured animal of the week", and a description of the major regions of
+the zoo like the aquarium, bear canyon, desert, and others.
 
 Animals
 -------
@@ -71,12 +79,37 @@ Animals
 | Kimani | Siberian tiger | Panthera tigris altaica | Kond Cat Complex | 9 | Siberian_tiger.jpg |
 | Antipode | Polar bear | Ursus maritimus | Moser Canyon | 11 | Polar_bear.jpg |
 
+Completing and submitting the assignment
+----------------------------------------
+
+- To begin, [**fork** this repository](https://guides.github.com/activities/forking/).
+- [Create a new Cloud9 workspace](https://docs.c9.io/docs/setting-up-github-workspace) from your new repository.
+  - Alternatively, you may [**clone**](http://gitref.org/creating/#clone) your new repository to your computer by
+    running:
+        git clone https://github.com/unioncollege-webtech/zookeep
+- After cloning (in C9 or on your computer), **check out the "gh-pages" branch**  by running:
+      git checkout gh-pages
+- Modify the files and [**commit**](http://gitref.org/basic/#commit) changes to complete your solution.
+- Run `node test` to verify that all tests pass.
+- [Push](http://gitref.org/remotes/#push)/sync the changes up to GitHub.
+- [Create a pull request](https://help.github.com/articles/creating-a-pull-request) on the original repository to turn in the assignment.
+
+You are also welcome commit, push, and create a pull request **before** you’ve 
+completed your solution. You can ask questions or request feedback there in your
+pull request. Just mention `@barberboy` in your comments to get my attention.
+
 
 References
 ----------
 
 - [Array]
 - [Object]
+- [array.sort(compareFn)][array.sort] - sort the elements of an array based on 
+  the provided comparison function
+- [array.filter(testFn)][array.filter] - create a new array containing only the
+  elements for which the test function returns `true`
 
-[Array]: 
-[Object]: 
+[Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+[Object]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer
+[array.filter]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+[array.sort]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
