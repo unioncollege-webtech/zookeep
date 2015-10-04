@@ -28,7 +28,7 @@ have several features, including a gallery of zoo animals, a “featured animal 
 the week”, a list of the animals sorted by their ages, and a description of the
 major regions of the zoo like the aquarium, bear canyon, desert, and others.
 
-An “index.html” file with basic styling has already been created for you, along
+An “[index.html](./index.html)” file with basic styling has already been created for you, along
 with a file called “render-helpers.js” containing several predefined functions
 for displaying the information on the page.
 
@@ -39,7 +39,7 @@ calling the predefined functions.
 
 ### Create `zoo.js` with the `animals` array
 
-Begin by creatng a file called “zoo.js”. Inside “zoo.js”, declare a variable
+Begin by creating a file called “zoo.js”. Inside “zoo.js”, declare a variable
 called `animals`, which is an [Array] containing an [Object] for each of the 
 [Animals](#animals) in the table below.
 
@@ -89,8 +89,8 @@ to the `displayFeaturedAnimal()` function.
 Use [`map()`][array.map] to create a new array containing **only** the animals 
 `name`, `commonName` and `age`, and store the new array in a variable called
 `ages`. Use [`sort()`][array.sort] to sort `ages` based on the animals’ age in 
-ascending order (smallest to largest) . Call the function
-`displayAnimalAges()`, passing in the `ages` array.
+ascending order (smallest to largest) . Call the
+`displayAnimalAges()` function, passing in the `ages` array.
 
 Animals
 -------
@@ -126,7 +126,7 @@ Completing and submitting the assignment
         git clone https://github.com/unioncollege-webtech/zookeep
 
 - After cloning (in C9 or on your computer), **check out the “gh-pages” branch**  by running:
-- 
+
         git checkout gh-pages
 
 - Modify the files and [**commit**](http://gitref.org/basic/#commit) changes to complete your solution.
