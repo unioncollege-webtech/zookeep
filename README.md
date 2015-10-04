@@ -104,7 +104,7 @@ Animals
 | Maverick | Tufted puffin | Fratercula cirrhata | Birai Aquarium | 2 | Tufted_puffin.jpg |
 | Puck | Little penguin | Eudyptula minor | Birai Aquarium | 4 | Little_penguin.jpg |
 | Tweed | Leafy sea dragon | Phycodurus eques | Birai Aquarium | 1| Leafy_seadragon.jpg |
-| Tayler | Swift fox | Vulpes velox | Rodeheaver Desert | 9 | Swift_fox.jpg |
+| Taylor | Swift fox | Vulpes velox | Rodeheaver Desert | 9 | Swift_fox.jpg |
 | Trip | Cape thick-knee | Burhinus capensus | Rodeheaver Desert | 5| Cape_thick-knee.jpg |
 | Helios | Mantled guereza | Colobus guereza | Fagan Valley | 11 | Mantled_guereza.jpg |
 | Asteria | Western lowland gorilla | Gorilla gorilla gorilla | Fagan Valley | 5 | Western_lowland_gorilla.jpg |
