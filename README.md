@@ -45,14 +45,14 @@ called `animals`, which is an [Array] containing an [Object] for each of the
 
 Each animal should be an Object that contains the following properties:
 
-- `name`: a `String` with the animal’s name from the table below
-- `commonName`: a `String` with the common name for the animal’s species
-- `species`: a `String` with the animal’s official species name
-- `location`: a `String` containing the area in the zoo where the animal resides
-- `age`: a `Number` representing the animal’s age in years
-- `image`: a `String` containing the file name for the animal’s image
+- `name`: a String with the animal’s name from the table below
+- `commonName`: a String with the common name for the animal’s species
+- `species`: a String with the animal’s official species name
+- `location`: a String containing the area in the zoo where the animal resides
+- `age`: a Number representing the animal’s age in years
+- `image`: a String containing the file name for the animal’s image
 
-For instance, the object for “Pi” the red river hog would be:
+For instance, the object for “Pip” the red river hog would be:
   
 ```javascript
 {
@@ -122,9 +122,13 @@ Completing and submitting the assignment
 - [Create a new Cloud9 workspace](https://docs.c9.io/docs/setting-up-github-workspace) from your new repository.
   - Alternatively, you may [**clone**](http://gitref.org/creating/#clone) your new repository to your computer by
     running:
+
         git clone https://github.com/unioncollege-webtech/zookeep
-- After cloning (in C9 or on your computer), **check out the “gh-page” branch**  by running:
-      git checkout gh-pages
+
+- After cloning (in C9 or on your computer), **check out the “gh-pages” branch**  by running:
+- 
+        git checkout gh-pages
+
 - Modify the files and [**commit**](http://gitref.org/basic/#commit) changes to complete your solution.
 - Run `node test` to verify that all tests pass.
 - [Push](http://gitref.org/remotes/#push)/sync the changes up to GitHub.
