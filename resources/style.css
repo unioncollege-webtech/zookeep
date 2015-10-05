@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font: 18px 'Source Sans Pro', 'Helvetica', sans-serif;
+    min-width: 960px;
+    max-width: 50em;
+    margin: auto;
+    padding: 1em;
+    text-align: center;
+}
+
+.featured-animal--info {
+    vertical-align: top;
+}
+
+.featured-animal--description {
+    vertical-align: top;
+    display: inline-block;
+    width: 35%;
+    padding-right: 1em;
+    margin: 0;
+    text-align: left;
+}
+
+.featured-animal--image-container {
+    display: inline-block;
+    width: 60%;
+}
+
+.featured-animal--image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+}
+
+.animal--image {
+    display: inline-block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.animal--common-name {
+    font-weight: bold;
+}
+
+.animal--species .label,
+.animal--location .label,
+.animal--common-name .label {
+    display: none;
+}
+
+.animal--species .value {
+    font-style: italic;
+}
+
+.animal--species .value:before {
+    content: '(';
+}
+
+.animal--species .value:after {
+    content: ')';
+}
+
+.animal {
+    vertical-align: top;
+    position: relative;
+    display: inline-block;
+    width: 31%;
+    margin: 1%;
+}
+
+.animal--details {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    color: white;
+    text-shadow: 2px 1px 1px #000;
+    padding: 1em;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.animal:hover .animal--details {
+    opacity: 1;
+}
+
+.animal-ages table {
+    width: 50%;
+    margin: auto;
+}
+
+.animal-ages table {
+    border: 1px solid #ddd;
+}
+
+.animal-ages tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+.attribution {
+    text-align: left;
+}
