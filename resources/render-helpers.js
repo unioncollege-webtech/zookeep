@@ -1,69 +1,58 @@
 function displayAnimalGallery(animals) {
     var container = document.querySelector('.animal-gallery--animals');
-
-    animals.map(animalDetails).forEach(function(element) {
-        container.appendChild(element);
-    }, container);
+    animals.map(animalDetails).forEach(container.appendChild, container);
 }
 
 function displayFeaturedAnimal(animal) {
     var container = document.querySelector('.featured-animal--info');
 
-    var name = container.querySelector('.featured-animal--name');
-    name.appendChild(document.createTextNode(animal.name));
+    container.querySelector('.featured-animal--name').appendChild(createTextNode(animal.name));
+    container.querySelector('.featured-animal--location').appendChild(createTextNode(animal.location));
+    container.querySelector('.featured-animal--age').appendChild(createTextNode(animal.age));
+    container.querySelector('.featured-animal--common-name').appendChild(createTextNode(animal.commonName));
 
-    var location = container.querySelector('.featured-animal--location');
-    location.appendChild(document.createTextNode(animal.location));
+    var imageLink = createElement('a', 'featured-animal--link');
+    imageLink.href = 'images/' + animal.image;
 
-    var age = container.querySelector('.featured-animal--age');
-    age.appendChild(document.createTextNode(animal.age));
-
-    var commonName = container.querySelector('.featured-animal--common-name');
-    commonName.appendChild(document.createTextNode(animal.commonName));
-
-    var imageContainer = container.querySelector('.featured-animal--image-container');
-
-    var image = document.createElement('img');
-    image.className = 'featured-animal--image';
+    var image = createElement('img', 'featured-animal--image');
     image.src = 'images/' + animal.image;
+    imageLink.appendChild(image);
 
-    imageContainer.appendChild(image);
+    container.querySelector('.featured-animal--image-container').appendChild(imageLink);
 }
 
 function displayAnimalAges(ages) {
     var container = document.querySelector('.animal-ages');
-    var table = document.createElement('table');
-    var headingRow = document.createElement('tr');
+    var table = createElement('table', 'animal-ages--table');
 
-    var nameHeading = document.createElement('th');
-    nameHeading.appendChild(document.createTextNode('Name'));
-    headingRow.appendChild(nameHeading);
-    
-    var speciesHeading = document.createElement('th');
-    speciesHeading.appendChild(document.createTextNode('Species'));
-    headingRow.appendChild(speciesHeading);
-    
-    var ageHeading = document.createElement('th');
-    ageHeading.appendChild(document.createTextNode('Age'));
-    headingRow.appendChild(ageHeading);
-    table.appendChild(headingRow);
+    var thead = createElement('thead');
+    table.appendChild(thead);
 
-    ages.map(ageDetails).forEach(function(details) {
-        table.appendChild(details);
-    });
+    var headingRow = createElement('tr');
+    headingRow.appendChild(createElement('th', 'name', 'Name'));
+    headingRow.appendChild(createElement('th', 'species', 'Species'));
+    headingRow.appendChild(createElement('th', 'age', 'Age'));
+    thead.appendChild(headingRow);
+
+    var tbody = createElement('tbody');
+    ages.map(ageDetails).forEach(tbody.appendChild, tbody);
+    table.appendChild(tbody);
+
     container.appendChild(table);
-
 }
 
 function animalDetails(animal) {
-    var element = document.createElement('article');
-    element.className = 'animal';
+    var element = createElement('article', 'animal');
+
     element.appendChild(createElement('h3', 'animal--name', animal.name));
 
-    var image = document.createElement('img');
-    image.className = 'animal--image';
+    var imageLink = createElement('a', 'featured-animal--link');
+    imageLink.href = 'images/' + animal.image;
+    element.appendChild(imageLink);
+
+    var image = createElement('img', 'animal--image');
     image.src = 'images/' + animal.image;
-    element.appendChild(image);
+    imageLink.appendChild(image);
 
     var details = createElement('div', 'animal--details');
     details.appendChild(createLabelAndValue('animal--common-name', 'Common name', animal.commonName));
@@ -79,28 +68,34 @@ function ageDetails(animal) {
     var row = document.createElement('tr');
 
     row.appendChild(createElement('td', 'name', animal.name));
-    row.appendChild(createElement('td', 'common-name', animal.commonName));
+    row.appendChild(createElement('td', 'species', animal.commonName));
     row.appendChild(createElement('td', 'age', animal.age));
 
     return row;
 }
 
-function createLabelAndValue(className, label, text) {
-    var element = createElement('div', className);
-    element.appendChild(createLabel(label));
-    element.appendChild(document.createTextNode(' '));
-    element.appendChild(createElement('span', 'value', text));
-    return element;
-}
 
-function createLabel(text) {
-    return createElement('span', 'label', text);
-}
+//
+// Utilities
+// 
 
 function createElement(tagName, className, text) {
     var element = document.createElement(tagName);
-    element.className = className;
-    element.appendChild(document.createTextNode(text || ''));
+    if (className) element.className = className;
+    if (text) element.appendChild(createTextNode(text));
+    return element;
+}
+
+function createTextNode(text) {
+    return document.createTextNode(text);
+}
+
+function createLabelAndValue(className, label, text) {
+    var element = createElement('div', className);
+
+    element.appendChild(createElement('span', 'label', label));
+    element.appendChild(createTextNode(' ')); // add some whitespace
+    element.appendChild(createElement('span', 'value', text));
 
     return element;
 }
