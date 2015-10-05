@@ -7,3 +7,5 @@ branches:
     - master
     - gh-pages
     - reference
+notifications:
+  webhooks: https://webhooks.gitter.im/e/7cf446b6c5e840460b80
