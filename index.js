@@ -119,7 +119,6 @@ var animals = [{
     image: "Polar_bear.jpg"
 }];
 
-
 var table = document.getElementById("main");
 for (var i = 0; i < animals.length; i++) {
 
