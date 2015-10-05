@@ -135,7 +135,7 @@ Completing and submitting the assignment
 
         git clone https://github.com/unioncollege-webtech/zookeep
 
-- After cloning (in Cloud9 or on your computer), check out the “**gh-pages**” by running:
+- After cloning (in Cloud9 or on your computer), check out the “**gh-pages**” branch by running:
 
         git checkout gh-pages
 
