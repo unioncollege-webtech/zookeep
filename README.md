@@ -133,7 +133,7 @@ Completing and submitting the assignment
   - Alternatively, you may [**clone**](http://gitref.org/creating/#clone) your new repository to your computer by
     running:
 
-        git clone https://github.com/unioncollege-webtech/zookeep
+        git clone https://github.com/YOUR_GITHUB_USERNAME/zookeep
 
 - After cloning (in Cloud9 or on your computer), check out the “**gh-pages**” branch by running:
 
