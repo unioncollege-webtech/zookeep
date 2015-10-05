@@ -23,11 +23,14 @@ function displayFeaturedAnimal(animal) {
 
     var imageContainer = container.querySelector('.featured-animal--image-container');
 
+    var imageLink = document.createElement('a');
+    imageLink.href = 'images/' + animal.image;
     var image = document.createElement('img');
     image.className = 'featured-animal--image';
     image.src = 'images/' + animal.image;
+    imageLink.appendChild(image);
 
-    imageContainer.appendChild(image);
+    imageContainer.appendChild(imageLink);
 }
 
 function displayAnimalAges(ages) {
@@ -60,10 +63,13 @@ function animalDetails(animal) {
     element.className = 'animal';
     element.appendChild(createElement('h3', 'animal--name', animal.name));
 
+    var imageLink = document.createElement('a');
+    imageLink.href = 'images/' + animal.image;
     var image = document.createElement('img');
     image.className = 'animal--image';
     image.src = 'images/' + animal.image;
-    element.appendChild(image);
+    imageLink.appendChild(image);
+    element.appendChild(imageLink);
 
     var details = createElement('div', 'animal--details');
     details.appendChild(createLabelAndValue('animal--common-name', 'Common name', animal.commonName));
