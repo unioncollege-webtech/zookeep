@@ -139,6 +139,17 @@ completed your solution. You can ask questions or request feedback there in your
 pull request. Just mention `@barberboy` in your comments to get my attention.
 
 
+Extra Credit Options
+--------------------
+
+1. There are 6 different exhibits at the zoo: Moser Canyon, Fagan Valley, Smith
+Jungle, Kond Cat Complex, Birai Aquarium, and Rodeheaver Desert. Create a new
+page, “exhibits.html”, that lists the animals for each exhibit.
+
+2. Instead of using “resources/render-helpers.js” and “resources/style.css”,
+write your own HTML, CSS and JavaScript to render the featured animal,
+gallery, and animal ages listing. Be creative!
+
 References
 ----------
 
