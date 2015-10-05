@@ -25,15 +25,13 @@ readFile("./zoo.js", "utf-8", function(err, value) {
                 }), "each animal should have the property `" + prop + "`");
             });
 
-            var sorted = isSorted(animals, 'name')
-            assert(sorted, "`animals` array should be sorted by animal name");
+            assert(isSorted(animals, 'name'), "`animals` array should be sorted by animal name");
         });
 
         test("displayAnimalGallery() is called correctly", function() {
             assert(sortedAnimals, "the function `displayAnimalGallery()` should be called");
 
-            var sorted = isSorted(sortedAnimals, 'name')
-            assert(sorted, "the animals array passed to `displayAnimalGallery()` should be sorted by name");
+            assert(isSorted(sortedAnimals, 'name'), "the animals array passed to `displayAnimalGallery()` should be sorted by name");
         });
 
         test("displayFeaturedAnimal() is called correctly", function() {
@@ -46,16 +44,12 @@ readFile("./zoo.js", "utf-8", function(err, value) {
         test("displayAnimalAges() is called correctly", function() {
             assert(sortedAges, "the function `displayAnimalAges()` should be called");
 
-            var sorted = isSorted(sortedAges, 'age');
-            assert(sorted, "the array passed to `displayAnimalAges()` should be sorted by age");
+            assert(isSorted(sortedAges, 'age'), "the array passed to `displayAnimalAges()` should be sorted by age");
 
-            var missingSpecies = isMissingProperty(sortedAges, 'species');
-            var missingLocation = isMissingProperty(sortedAges, 'location');
-            var missingImage = isMissingProperty(sortedAges, 'image');
-
-            assert(missingSpecies, "the animals in the array passed to `displayAnimalAges()` should not have a `species` property");
-            assert(missingLocation, "the animals in the array passed to `displayAnimalAges()` should not have a `location` property");
-            assert(missingImage, "the animals in the array passed to `displayAnimalAges()` should not have a `image` property");
+            ['species', 'location', 'image'].forEach(function(prop) {
+                assert(isMissingProperty(sortedAges, prop),
+                    "the animals in the array passed to `displayAnimalAges()` should not have a `" + prop + "` property");
+            });
         });
 
     });
@@ -95,11 +89,7 @@ function isSorted(array, prop) {
 }
 
 function isMissingProperty(array, prop) {
-    var missingProp = true;
-    array.forEach(function(el) {
-        if (prop in el) {
-            missingProp = false;
-        }
+    return array.every(function(el) {
+        return !(prop in el);
     });
-    return missingProp;
 }
