@@ -17,10 +17,16 @@ readFile("./zoo.js", "utf-8", function(err, value) {
 
         test("animals variable is defined in zoo.js", function() {
             assert(animals, "`animals` array should be defined in zoo.js");
-            assert.equal(animals.length, 17, "`animals` array should contain all 17 animals.");
+            assert.equal(animals.length, 17, "`animals` array should contain all 17 animals");
+
+            ['name', 'commonName', 'species', 'location', 'age', 'image'].forEach(function(prop) {
+                assert(animals.every(function(animal) {
+                    return prop in animal;
+                }), "each animal should have the property `" + prop + "`");
+            });
 
             var sorted = isSorted(animals, 'name')
-            assert(sorted, "`animals` array should be sorted by animal name.");
+            assert(sorted, "`animals` array should be sorted by animal name");
         });
 
         test("displayAnimalGallery() is called correctly", function() {
