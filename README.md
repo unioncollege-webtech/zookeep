@@ -140,7 +140,7 @@ Completing and submitting the assignment
 
 - Modify the files and [**commit**](http://gitref.org/basic/#commit) changes to complete your solution.
 - Run `node test` to verify that all tests pass.
-- [Push](http://gitref.org/remotes/#push)/sync the changes up to GitHub.
+- [Push](http://gitref.org/remotes/#push)/sync the changes up to GitHub. Your assignment will now be visible at [http://YOUR_GITHUB_USERNAME.github.io/zookeep/](http://unioncollege-webtech.github.io/zookeep/).
 - [Create a pull request](https://help.github.com/articles/creating-a-pull-request) on the original repository to turn in the assignment.
 - [Create a separate branch](http://gitref.org/branching/#branch) for the extra credit options.
 
