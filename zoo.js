@@ -81,7 +81,7 @@ var animals = [{
     species: "Cercopithecus wolfi",
     location: "Fagan Valley",
     age: 10,
-    image: "Wolfs_mana_monkey.jpg"
+    image: "Wolfs_mona_monkey.jpg"
 }, {
     name: "Pip",
     common_name: "Red river hog",
@@ -109,7 +109,7 @@ var animals = [{
     species: "Panthera tigris altaica",
     location: "Kond Cat Complex",
     age: 2,
-    image: ".jpg"
+    image: "Siberian_tiger.jpg"
 }, {
     name: "Antipode",
     common_name: "Polar bear",
