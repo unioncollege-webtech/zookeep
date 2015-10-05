@@ -27,7 +27,7 @@ and use various [array methods](https://developer.mozilla.org/en-US/docs/Web/Jav
 to sort, filter, and organize lists of animals, and display their information by 
 calling the predefined functions.
 
-### Create `zoo.js` with the `animals` array
+### Create zoo.js with the `animals` array
 
 Begin by creating a file called “zoo.js”. Inside “zoo.js”, declare a variable
 called `animals`, which is an [Array] containing an [Object] for each of the 
@@ -57,7 +57,7 @@ For instance, the object for “Pip” the red river hog would be:
 
 ### Sort and display the animal gallery
 
-Use [`sort()`][array.sort] to sort the `animals` array based on their `name`.
+Use [sort()][array.sort] to sort the `animals` array based on their `name`.
 
 After the `animals` array is sorted, call the `displayAnimalGallery()` function,
 passing in the (sorted) `animals` array. For example:
@@ -73,7 +73,7 @@ see a gallery of the zoo animals. Woot!
 ### Display the featured animal
 
 The featured animal of the week is Taylor, the Swift fox. Use
-[`filter()`][array.filter] to create a new array containing *only* Taylor, and 
+[filter()][array.filter] to create a new array containing *only* Taylor, and 
 store this array in a variable called `featured`. Use 
 [bracket notation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors#Bracket_notation)
 (`featured[index]`) to retrieve the first (and only) array element, and pass it
@@ -81,9 +81,9 @@ to the `displayFeaturedAnimal()` function.
 
 ### Map, sort, and display animal ages
 
-Use [`map()`][array.map] to create a new array containing **only** the animals’ 
+Use [map()][array.map] to create a new array containing **only** the animals’ 
 `name`, `commonName` and `age`, and store the new array in a variable called
-`ages`. Use [`sort()`][array.sort] to sort `ages` based on the animals’ age in 
+`ages`. Use [sort()][array.sort] to sort `ages` based on the animals’ age in 
 ascending order (smallest to largest) . Call the
 `displayAnimalAges()` function, passing in the `ages` array.
 
@@ -117,11 +117,12 @@ Extra Credit Options
 
 1. There are 6 different exhibits at the zoo: Moser Canyon, Fagan Valley, Smith
 Jungle, Kond Cat Complex, Birai Aquarium, and Rodeheaver Desert. Create a new
-page, “exhibits.html”, that lists the animals for each exhibit.
+page, “exhibits.html”, that lists or displays a gallery containing the animals
+for each exhibit.
 
 2. Instead of using “resources/render-helpers.js” and “resources/style.css”,
 write your own HTML, CSS and JavaScript to render the featured animal,
-gallery, and animal ages listing. Be creative!
+gallery, and animal ages listing. Be creative and be awesome.
 
 
 Completing and submitting the assignment
@@ -134,7 +135,7 @@ Completing and submitting the assignment
 
         git clone https://github.com/unioncollege-webtech/zookeep
 
-- After cloning (in C9 or on your computer), **check out the “gh-pages” branch**  by running:
+- After cloning (in Cloud9 or on your computer), check out the “**gh-pages**” by running:
 
         git checkout gh-pages
 

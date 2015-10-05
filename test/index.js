@@ -11,7 +11,7 @@ readFile("./zoo.js", "utf-8", function(err, value) {
     })
 
     test("zoo.js parses correctly", function() {
-        assert(value, "zoo.js should not be empty.");
+        assert(value, "zoo.js should not be empty");
 
         eval(value);
 
@@ -20,9 +20,7 @@ readFile("./zoo.js", "utf-8", function(err, value) {
             assert.equal(animals.length, 17, "`animals` array should contain all 17 animals");
 
             ['name', 'commonName', 'species', 'location', 'age', 'image'].forEach(function(prop) {
-                assert(animals.every(function(animal) {
-                    return prop in animal;
-                }), "each animal should have the property `" + prop + "`");
+                assert(hasProperty(animals, prop), "each animal should have the property `" + prop + "`");
             });
 
             assert(isSorted(animals, 'name'), "`animals` array should be sorted by animal name");
@@ -46,9 +44,14 @@ readFile("./zoo.js", "utf-8", function(err, value) {
 
             assert(isSorted(sortedAges, 'age'), "the array passed to `displayAnimalAges()` should be sorted by age");
 
+            ['name', 'commonName', 'age'].forEach(function(prop) {
+                assert(hasProperty(sortedAges, prop),
+                    "the animals in the array passed to `displayAnimalAges()` should have a `" + prop + "` property");
+            });
+
             ['species', 'location', 'image'].forEach(function(prop) {
                 assert(isMissingProperty(sortedAges, prop),
-                    "the animals in the array passed to `displayAnimalAges()` should not have a `" + prop + "` property");
+                    "the animals in the array passed to `displayAnimalAges()` should *not* have a `" + prop + "` property");
             });
         });
 
@@ -91,5 +94,11 @@ function isSorted(array, prop) {
 function isMissingProperty(array, prop) {
     return array.every(function(el) {
         return !(prop in el);
+    });
+}
+
+function hasProperty(array, prop) {
+    return array.every(function(el) {
+        return (prop in el);
     });
 }
