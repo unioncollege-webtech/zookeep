@@ -89,16 +89,18 @@ body {
     opacity: 1;
 }
 
-.animal-ages table {
+.animal-ages--table {
     width: 50%;
     margin: auto;
-}
-
-.animal-ages table {
     border: 1px solid #ddd;
 }
 
-.animal-ages tr:nth-child(even) {
+.animal-ages--table thead {
+    background: #333;
+    color: white;
+}
+
+.animal-ages tbody tr:nth-child(even) {
     background-color: #ddd;
 }
 
