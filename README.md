@@ -3,15 +3,6 @@ Zookeep
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/unioncollege-webtech/zookeep?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-**<span style="background-color:#ffa">
-Hey, congratulations for taking the  initiative to seek and find this 
-assignment! The instructions are still being finalized, so just hold
-tight and you’ll receive an email when it is available.
-</span>**
-
-Summary
--------
-
 Create a list of zoo animals using Objects and Arrays, and create a web page to
 display their information.
 
@@ -25,15 +16,14 @@ If you clone the repository and have no files, remember to run `git checkout gh-
 
 In this assignment, we’ll be building a homepage for a zoo. The homepage will
 have several features, including a gallery of zoo animals, a “featured animal of
-the week”, a list of the animals sorted by their ages, and a description of the
-major regions of the zoo like the aquarium, bear canyon, desert, and others.
+the week”, and a list of the animals sorted by their ages.
 
-An “[index.html](./index.html)” file with basic styling has already been created for you, along
-with a file called “render-helpers.js” containing several predefined functions
-for displaying the information on the page.
+An “[index.html](./index.html)” file with basic styling has already been created
+for you, as well as a file called “render-helpers.js” containing several 
+predefined functions for displaying the information on the page.
 
-You will create an array containing the animals’ information, and use various 
-[array methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_2)
+You will create a new file with an array containing the animals’ information, 
+and use various [array methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_2)
 to sort, filter, and organize lists of animals, and display their information by 
 calling the predefined functions.
 
@@ -68,12 +58,17 @@ For instance, the object for “Pip” the red river hog would be:
 ### Sort and display the animal gallery
 
 Use [`sort()`][array.sort] to sort the `animals` array based on their `name`.
-Call the `displayAnimalGallery()` function, passing in the (sorted) `animals`
-array. For instance:
+
+After the `animals` array is sorted, call the `displayAnimalGallery()` function,
+passing in the (sorted) `animals` array. For example:
 
 ```javascript
 displayAnimalGallery(animals);
 ```
+
+Run `node test` to see if everything is working correctly so far, and also take
+a look at “index.html” in a browser. If everything works correctly, you should
+see a gallery of the zoo animals. Woot!
 
 ### Display the featured animal
 
@@ -91,6 +86,7 @@ Use [`map()`][array.map] to create a new array containing **only** the animals�
 `ages`. Use [`sort()`][array.sort] to sort `ages` based on the animals’ age in 
 ascending order (smallest to largest) . Call the
 `displayAnimalAges()` function, passing in the `ages` array.
+
 
 Animals
 -------
@@ -115,6 +111,19 @@ Animals
 | Kimani | Siberian tiger | Panthera tigris altaica | Kond Cat Complex | 9 | Siberian_tiger.jpg |
 | Antipode | Polar bear | Ursus maritimus | Moser Canyon | 11 | Polar_bear.jpg |
 
+
+Extra Credit Options
+--------------------
+
+1. There are 6 different exhibits at the zoo: Moser Canyon, Fagan Valley, Smith
+Jungle, Kond Cat Complex, Birai Aquarium, and Rodeheaver Desert. Create a new
+page, “exhibits.html”, that lists the animals for each exhibit.
+
+2. Instead of using “resources/render-helpers.js” and “resources/style.css”,
+write your own HTML, CSS and JavaScript to render the featured animal,
+gallery, and animal ages listing. Be creative!
+
+
 Completing and submitting the assignment
 ----------------------------------------
 
@@ -133,22 +142,12 @@ Completing and submitting the assignment
 - Run `node test` to verify that all tests pass.
 - [Push](http://gitref.org/remotes/#push)/sync the changes up to GitHub.
 - [Create a pull request](https://help.github.com/articles/creating-a-pull-request) on the original repository to turn in the assignment.
+- [Create a separate branch](http://gitref.org/branching/#branch) for the extra credit options.
 
 You are also welcome commit, push, and create a pull request **before** you’ve 
 completed your solution. You can ask questions or request feedback there in your
 pull request. Just mention `@barberboy` in your comments to get my attention.
 
-
-Extra Credit Options
---------------------
-
-1. There are 6 different exhibits at the zoo: Moser Canyon, Fagan Valley, Smith
-Jungle, Kond Cat Complex, Birai Aquarium, and Rodeheaver Desert. Create a new
-page, “exhibits.html”, that lists the animals for each exhibit.
-
-2. Instead of using “resources/render-helpers.js” and “resources/style.css”,
-write your own HTML, CSS and JavaScript to render the featured animal,
-gallery, and animal ages listing. Be creative!
 
 References
 ----------
@@ -167,6 +166,7 @@ References
 [array.filter]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 [array.sort]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 [array.map]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+
 
 License
 -------
