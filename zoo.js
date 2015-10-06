@@ -119,42 +119,42 @@ var animals = [{
     image: "Polar_bear.jpg"
 }];
 
-animals.sort(
-    function(a, b) {
-        var A = a.name.toLowerCase();
-        var B = b.name.toLowerCase();
-        if (A < B) {
-            return -1;
-        }
-        else if (A > B) {
-            return 1;
-        }
-        else {
-            return 0;
-        }
-    });
-
-displayAnimalGallery(animals);
-
-var featured = animals.filter(function(value) {
-    if (value.name === "Taylor")
+var locations = [];
+locations.push(animals.filter(function(value) {
+    if (value.location === "Moser Canyon")
         return 1;
     else
         return 0;
-})
+}));
+locations.push(animals.filter(function(value) {
+    if (value.location === "Fagan Valley")
+        return 1;
+    else
+        return 0;
+}));
+locations.push(animals.filter(function(value) {
+    if (value.location === "Smith Jungle")
+        return 1;
+    else
+        return 0;
+}));
+locations.push(animals.filter(function(value) {
+    if (value.location === "Kond Cat Complex")
+        return 1;
+    else
+        return 0;
+}));
 
-displayFeaturedAnimal(featured[0]);
+locations.push(animals.filter(function(value) {
+    if (value.location === "Birai Aquarium")
+        return 1;
+    else
+        return 0;
+}));
+locations.push(animals.filter(function(value) {
+    if (value.location === "Rodeheaver Desert")
+        return 1;
+    else
+        return 0;
+}));
 
-var ages = animals.map(function(value) {
-    return {
-        name: value.name,
-        commonName: value.commonName,
-        age: value.age
-    };
-})
-
-ages.sort(function(a, b) {
-    return a.age - b.age;
-})
-
-displayAnimalAges(ages)
