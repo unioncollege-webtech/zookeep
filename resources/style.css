@@ -1,0 +1,12 @@
+body{
+    text-align:center;
+}
+.animal{
+    float:left;
+}
+
+.exhibit{
+    width:100%;
+    display: inline-block;
+    
+}

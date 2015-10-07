@@ -9,13 +9,13 @@ var AnimalView = React.createClass({
     render: function render() {
         return React.createElement(
             "div",
-            { "class": "animal" },
+            { className: "animal" },
             React.createElement(
                 "h3",
                 null,
                 this.props.animal.name
             ),
-            React.createElement("img", { src: "images/" + this.props.animal.image })
+            React.createElement("img", { src: "images/" + this.props.animal.image, width: 300 })
         );
     }
 });
@@ -29,7 +29,7 @@ var ExhibitView = React.createClass({
         };
         return React.createElement(
             "section",
-            null,
+            { className: "exhibit" },
             React.createElement(
                 "h2",
                 null,
@@ -55,4 +55,4 @@ var ContainerView = React.createClass({
     }
 });
 
-React.render(React.createElement(ContainerView, { locations: locations }), document.getElementById('exhibits'));
+React.render(React.createElement(ContainerView, { className: "container", locations: locations }), document.getElementById('exhibits'));
