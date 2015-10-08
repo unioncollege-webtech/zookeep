@@ -9,7 +9,7 @@ var AnimalView = React.createClass({
     render: function render() {
         return React.createElement(
             "div",
-            { className: "animal" },
+            { className: "unit-20" },
             React.createElement(
                 "h3",
                 null,
@@ -29,7 +29,7 @@ var ExhibitView = React.createClass({
         };
         return React.createElement(
             "section",
-            { className: "exhibit" },
+            { className: "units-row" },
             React.createElement(
                 "h2",
                 null,

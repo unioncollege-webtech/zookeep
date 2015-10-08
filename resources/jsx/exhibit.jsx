@@ -5,7 +5,7 @@ var AnimalView =
 React.createClass({
     render: function() {
         return (
-                <div className="animal">
+                <div className="unit-20">
                 <h3>
                     {this.props.animal.name}
                     </h3>
@@ -21,7 +21,7 @@ var ExhibitView = React.createClass({
             return <AnimalView animal={animal} />
         };
         return (
-            <section className="exhibit">
+            <section className="units-row">
                 <h2>{this.props.exhibit[0].location}</h2>
                 {this.props.exhibit.map(item)}
             </section>
