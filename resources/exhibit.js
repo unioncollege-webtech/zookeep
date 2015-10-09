@@ -25,7 +25,7 @@ var ExhibitView = React.createClass({
 
     render: function render() {
         function item(animal) {
-            return React.createElement(AnimalView, { animal: animal });
+            return React.createElement(AnimalView, { animal: animal, key: animal + 1 });
         };
         return React.createElement(
             "section",
@@ -55,4 +55,4 @@ var ContainerView = React.createClass({
     }
 });
 
-React.render(React.createElement(ContainerView, { className: "container", locations: locations }), document.getElementById('exhibits'));
+ReactDOM.render(React.createElement(ContainerView, { className: "container", locations: locations }), document.getElementById('exhibits'));

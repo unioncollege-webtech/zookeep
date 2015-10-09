@@ -18,7 +18,7 @@ React.createClass({
 var ExhibitView = React.createClass({
     render: function() {
         function item(animal) {
-            return <AnimalView animal={animal} />
+            return <AnimalView animal={animal} key={animal+1} />
         };
         return (
             <section className="units-row">
@@ -43,7 +43,7 @@ var ContainerView = React.createClass({
 });
 
 
-React.render(
+ReactDOM.render(
     <ContainerView className="container"  locations={locations}/>,
     document.getElementById('exhibits')
 );
