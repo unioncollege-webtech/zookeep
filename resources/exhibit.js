@@ -1,5 +1,4 @@
-/* global React */
-/* global locations */
+/* global React ReactDOM locations */
 
 "use strict";
 
@@ -25,7 +24,7 @@ var ExhibitView = React.createClass({
 
     render: function render() {
         function item(animal) {
-            return React.createElement(AnimalView, { animal: animal, key: animal + 1 });
+            return React.createElement(AnimalView, { animal: animal, key: animal.name + "1" });
         };
         return React.createElement(
             "section",
@@ -45,7 +44,7 @@ var ContainerView = React.createClass({
 
     render: function render() {
         function item(exhibit) {
-            return React.createElement(ExhibitView, { exhibit: exhibit });
+            return React.createElement(ExhibitView, { exhibit: exhibit, key: exhibit[0].location + "1" });
         };
         return React.createElement(
             "section",

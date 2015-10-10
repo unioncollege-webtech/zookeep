@@ -1,5 +1,4 @@
-/* global React */
-/* global locations */
+/* global React ReactDOM locations */
 
 var AnimalView = 
 React.createClass({
@@ -18,7 +17,7 @@ React.createClass({
 var ExhibitView = React.createClass({
     render: function() {
         function item(animal) {
-            return <AnimalView animal={animal} key={animal+1} />
+            return <AnimalView animal={animal} key={animal.name+"1"} />
         };
         return (
             <section className="units-row">
@@ -32,7 +31,7 @@ var ExhibitView = React.createClass({
 var ContainerView = React.createClass({
     render: function() {
         function item(exhibit) {
-            return <ExhibitView exhibit={exhibit} />
+            return <ExhibitView exhibit={exhibit} key={exhibit[0].location+"1"} />
         };
         return (
             <section>
