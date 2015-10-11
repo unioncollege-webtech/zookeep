@@ -166,4 +166,25 @@ displayAnimalGallery(animals.sort(function (a, b) {
 }));
 
 
+var featured = animals.filter(function(value) {
+    if (value.name === "Taylor") return 1;
+    else return 0;
+});
+
+
+displayFeaturedAnimal(featured[0]);
+
+
+var ages = animals.map(function(value) {
+    return {
+        name: value.name,
+        commonName: value.commonName,
+        age: value.age
+    };
+});
+
+
+displayAnimalAges(ages.sort(function(a, b) {
+    return a.age - b.age;
+}));
 
