@@ -155,13 +155,13 @@ var animals = [
     }
 ];
     
-
-displayAnimalGallery(animals.sort(function (a, b) {
+/*global displayAnimalGallery */
+displayAnimalGallery(animals.sort(function(a,b) {
     var animalA = a.name.toLowerCase();
     var animalB = b.name.toLowerCase();
     
-    if (animalA < animalB) return 1;
-    else if (animalA > animalB) return -1;
+    if (animalA > animalB) return 1;
+    else if (animalA < animalB) return -1;
     else return 0;
 }));
 
@@ -171,7 +171,7 @@ var featured = animals.filter(function(value) {
     else return 0;
 });
 
-
+/*global displayFeaturedAnimal */
 displayFeaturedAnimal(featured[0]);
 
 
@@ -183,7 +183,7 @@ var ages = animals.map(function(value) {
     };
 });
 
-
+/*global displayAnimalAges */
 displayAnimalAges(ages.sort(function(a, b) {
     return a.age - b.age;
 }));
