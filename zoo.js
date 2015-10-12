@@ -155,20 +155,23 @@ var animals = [
     }
 ];
     
-/*global displayAnimalGallery */
-displayAnimalGallery(animals.sort(function(a,b) {
+    
+animals = animals.sort(function(a, b) {
     var animalA = a.name.toLowerCase();
     var animalB = b.name.toLowerCase();
     
     if (animalA > animalB) return 1;
     else if (animalA < animalB) return -1;
-    else return 0;
-}));
+    else return 0; 
+});
+
+/*global displayAnimalGallery */
+displayAnimalGallery(animals);
 
 
 var featured = animals.filter(function(value) {
-    if (value.name === "Taylor") return 1;
-    else return 0;
+    if (value.name === "Taylor") return true;
+    else return false;
 });
 
 /*global displayFeaturedAnimal */
