@@ -138,7 +138,7 @@ var animals = [
 ];
 
 function sortBy(propName){
-  var returnFunc = function(a,b){
+  return function(a,b){
     if ( a[propName] > b[propName] ){
       return 1;
     } else if ( b[propName] > a[propName] ){
@@ -147,7 +147,6 @@ function sortBy(propName){
       return 0;
     }
   }
-  return returnFunc;
 }
 
 animals.sort(sortBy("name"));
