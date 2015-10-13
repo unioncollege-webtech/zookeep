@@ -1,0 +1,13 @@
+h1, h2{
+    text-align: center;
+}
+#container{
+   min-width: 700px;
+   max-width: 60em;
+   margin: auto;
+   padding: 1em;
+   background-color:gray;
+}
+body{
+    font: 30px;
+}
