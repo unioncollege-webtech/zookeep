@@ -150,9 +150,9 @@ animals.sort(function(a,b){
 
 var featured = animals.filter(function(obj){
   if ( obj.name == "Taylor"){
-    return 1;
+    return true;
   } else {
-    return 0;
+    return false;
   }
 });
 
