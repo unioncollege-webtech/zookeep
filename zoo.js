@@ -137,16 +137,20 @@ var animals = [
   }
 ];
 
-
-animals.sort(function(a,b){
-  if ( a.name > b.name ){
-    return 1;
-  } else if ( b.name > a.name ){
-    return -1;
-  } else {
-    return 0;
+function sortBy(propName){
+  var returnFunc = function(a,b){
+    if ( a[propName] > b[propName] ){
+      return 1;
+    } else if ( b[propName] > a[propName] ){
+      return -1;
+    } else {
+      return 0;
+    }
   }
-});
+  return returnFunc;
+}
+
+animals.sort(sortBy("name"));
 
 var featured = animals.filter(function(obj){
   if ( obj.name == "Taylor"){
@@ -164,9 +168,7 @@ var ages = animals.map(function(obj){
   }
 });
 
-ages.sort(function(a,b){
-  return a.age - b.age;
-});
+ages.sort(sortBy("age"));
 
 displayAnimalGallery(animals);
 displayFeaturedAnimal(featured[0]);
