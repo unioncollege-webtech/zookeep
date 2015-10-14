@@ -155,17 +155,16 @@ var animals = [
     }
 ];
     
-    
-animals = animals.sort(function(a, b) {
-    var animalA = a.name.toLowerCase();
-    var animalB = b.name.toLowerCase();
-    
-    if (animalA > animalB) return 1;
-    else if (animalA < animalB) return -1;
-    else return 0; 
-});
+function sortBy(property) {
+    return function(a, b) {
+        if (a[property] > b[property]) return 1;
+        else if (a[property] < b[property]) return -1;
+        else return 0;
+    }
+}
 
 /*global displayAnimalGallery */
+animals.sort(sortBy("name"));
 displayAnimalGallery(animals);
 
 
