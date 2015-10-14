@@ -155,6 +155,7 @@ var animals = [
     }
 ];
     
+    
 function sortBy(propertyName) {
     return function(a, b) {
         if (a[propertyName] > b[propertyName]) return 1;
@@ -163,22 +164,16 @@ function sortBy(propertyName) {
     };
 }
 
-/*global displayAnimalGallery */
-animals.sort(sortBy("name"));
-displayAnimalGallery(animals);
-
-
 function propertyEquals(propertyName, value) {
     return function(object) {
-        return (object[propertyName] === value);
+        if (object[propertyName] === value) {
+            return true;
+        }
+        else {
+            return false;
+        }
     };
 }
-
-var featured = animals.filter(propertyEquals("name", "Taylor"));
-
-/*global displayFeaturedAnimal */
-displayFeaturedAnimal(featured[0]);
-
 
 function pick(){
     var params = arguments;
@@ -191,10 +186,20 @@ function pick(){
     };
 }
 
-var picks = pick("name", "commonName", "age");
-var ages = animals.map(picks);
+
+var featured = animals.filter(propertyEquals("name", "Taylor"));
+var ages = animals.map(pick("name", "commonName", "age"));
+
 
 ages.sort(sortBy("age"));
+animals.sort(sortBy("name"));
+
+
+/*global displayAnimalGallery */
+displayAnimalGallery(animals);
+
+/*global displayFeaturedAnimal */
+displayFeaturedAnimal(featured[0]);
 
 /*global displayAnimalAges */
 displayAnimalAges(ages);
