@@ -125,6 +125,71 @@ write your own HTML, CSS and JavaScript to render the featured animal,
 gallery, and animal ages listing. Be creative and be awesome.
 
 
+Higher Order Functions
+----------------------
+
+Higher order functions are functions that either accept functions as parameters 
+or return a function as a return value.
+
+Create a new branch by running the command `git checkout -b higher-order-functions`.
+In this branch, edit your “zoo.js” and add three new higher-order functions:
+
+### sortBy(propertyName)
+
+The `sortBy` function returns a [compare function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#Description)
+that sorts elements based on the value of each element's `propertyName`
+property.
+
+For instance, calling `sortBy('name')`, will return a function that can be 
+passed to `animals.sort(...)`, and will sort the animals based their `name`
+property.
+
+Use your new `sortBy` function to create compare functions to sort the `animals`
+array by the animals' "name" property, and the `ages` array to sort by "age".
+
+### propertyEquals(propertyName, value)
+
+The `propertyEquals` function returns a function that returns `true` if an
+element has a property at `propertyName` with the specified `value`.
+
+For instance, calling `propertyEquals('name', 'Taylor')` will return a function
+that can be passed to `animals.filter(...)` to generate a new array containing
+only `Taylor` the Swift fox.
+
+### pick(p1[, p2[, p3...]])
+
+The `pick` function returns a function that returns a new object containing only
+the properties specified.
+
+```javascript
+var furniture = [{
+  name: "chair",
+  legs: 4,
+  material: "wood"
+}, {
+  name: "stool",
+  legs: 3,
+  material: "metal"
+}];
+
+var noLegs = furniture.map( pick('name', 'material') );
+console.log( noLegs );
+// => [{name: "chair",  material: "wood"}, {name: "stool", material: "metal"}]
+```
+
+The `pick` function should accept any number of arguments (hint: use the 
+[`arguments`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments)
+object inside your function).
+
+Use the `pick` function to create the function passed to `animals.map(...)` when
+creating a the `ages` array.
+
+
+When you have created and used all three higher-order functions, commit your
+changes to the `higher-order-functions` branch and push that branch to GitHub by 
+running `git push -u origin higher-order-functions`. Create a new pull request 
+from your `higher-order-functions` branch to submit your assignment.
+
 Completing and submitting the assignment
 ----------------------------------------
 
