@@ -181,10 +181,11 @@ displayFeaturedAnimal(featured[0]);
 
 
 function pick(){
+    var params = arguments;
     return function(value){
         var objs = {};
-        for (var i = 0; i < arguments.length; i++) {
-            objs[arguments[i]] = value[arguments[i]];
+        for (var i = 0; i < params.length; i++) {
+            objs[params[i]] = value[params[i]];
         }
         return objs;
     };
