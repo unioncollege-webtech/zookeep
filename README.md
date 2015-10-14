@@ -125,10 +125,10 @@ write your own HTML, CSS and JavaScript to render the featured animal,
 gallery, and animal ages listing. Be creative and be awesome.
 
 
-Higher Order Functions
+Higher-Order Functions
 ----------------------
 
-Higher order functions are functions that either accept functions as parameters 
+Higher-order functions are functions that either accept functions as parameters 
 or return a function as a return value.
 
 Create a new branch by running the command `git checkout -b higher-order-functions`.
@@ -145,7 +145,7 @@ passed to `animals.sort(...)`, and will sort the animals based their `name`
 property.
 
 Use your new `sortBy` function to create compare functions to sort the `animals`
-array by the animals' "name" property, and the `ages` array to sort by "age".
+array by their `"name"` property, and the `ages` array to sort by `"age"`.
 
 ### propertyEquals(propertyName, value)
 
@@ -154,7 +154,8 @@ element has a property at `propertyName` with the specified `value`.
 
 For instance, calling `propertyEquals('name', 'Taylor')` will return a function
 that can be passed to `animals.filter(...)` to generate a new array containing
-only `Taylor` the Swift fox.
+only `Taylor` the Swift fox. Use this function to create the `featured` animal
+array.
 
 ### pick(p1[, p2[, p3...]])
 
@@ -186,7 +187,7 @@ creating a the `ages` array.
 
 
 When you have created and used all three higher-order functions, commit your
-changes to the `higher-order-functions` branch and push that branch to GitHub by 
+changes to the higher-order-functions branch and push it to GitHub by 
 running `git push -u origin higher-order-functions`. Create a new pull request 
 from your `higher-order-functions` branch to submit your assignment.
 
