@@ -169,8 +169,8 @@ displayAnimalGallery(animals);
 
 
 function propertyEquals(propertyName, value) {
-    return function(value) {
-        return (value[propertyName] === value);
+    return function(specify) {
+        return (specify[propertyName] === value);
     };
 }
 
