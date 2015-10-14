@@ -179,13 +179,19 @@ var featured = animals.filter(propertyEquals("name", "Taylor"));
 /*global displayFeaturedAnimal */
 displayFeaturedAnimal(featured[0]);
 
-var ages = animals.map(function(value) {
-    return {
-        name: value.name,
-        commonName: value.commonName,
-        age: value.age
+
+function pick(){
+    return function(value){
+        var objs = {};
+        for (var i = 0; i < arguments.length; i++) {
+            objs[arguments[i]] = value[arguments[i]];
+        }
+        return objs;
     };
-});
+}
+
+var picks = pick("name", "commonName", "age");
+var ages = animals.map(picks);
 
 ages.sort(sortBy("age"));
 
