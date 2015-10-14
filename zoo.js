@@ -154,15 +154,14 @@ function sortBy(prop) {
 
 }
 
-function propertyEquals(propertyName, value){
+function propertyEquals(propertyName, propValue){
     return function(value) {
-        return (value[propertyName] === value)
+        return (value[propertyName] == propValue)
     }
 }
 
 function pick(){
     var args = arguments;
-    console.log(arguments);
     return function(value){
         var item = {};
         for(var i = 0; i < args.length; i++)
