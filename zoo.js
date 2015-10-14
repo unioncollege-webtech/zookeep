@@ -118,43 +118,57 @@ var animals = [{
     age: 11,
     image: "Polar_bear.jpg"
 }];
+var sortByAge = sortBy("age");
+var sortByName = sortBy("name");
+var filterName = propertyEquals('name','Taylor');
+var picks = pick('name', 'commonName', 'age');
 
-animals.sort(
-    function(a, b) {
-        var A = a.name.toLowerCase();
-        var B = b.name.toLowerCase();
-        if (A < B) {
-            return -1;
-        }
-        else if (A > B) {
-            return 1;
-        }
-        else {
-            return 0;
-        }
-    });
+animals.sort(sortByName);
 
 displayAnimalGallery(animals);
 
-var featured = animals.filter(function(value) {
-    if (value.name === "Taylor")
-        return 1;
-    else
-        return 0;
-})
+var featured = animals.filter(filterName)
 
 displayFeaturedAnimal(featured[0]);
 
-var ages = animals.map(function(value) {
-    return {
-        name: value.name,
-        commonName: value.commonName,
-        age: value.age
-    };
-})
+var ages = animals.map(picks);
 
-ages.sort(function(a, b) {
-    return a.age - b.age;
-})
-
+ages.sort(sortByAge);
 displayAnimalAges(ages)
+
+
+function sortBy(prop) {
+    if (prop === "age") {
+        return function(a, b) {
+            return a[prop] - b[prop];
+        }
+    }
+    else {
+        console.log("name")
+        return function(a, b) {
+            var A = a[prop].toLowerCase();
+            var B = b[prop].toLowerCase();
+            return A < B ? -1 : A > B ? 1 : 0;
+        }
+    }
+
+}
+
+function propertyEquals(propertyName, value){
+    return function(value) {
+        return (value[propertyName] === value)
+    }
+}
+
+function pick(){
+    var args = arguments;
+    console.log(arguments);
+    return function(value){
+        var item = {};
+        for(var i = 0; i < args.length; i++)
+        {
+            item[args[i]] = value[args[i]];
+        }
+        return item;
+    }
+}
