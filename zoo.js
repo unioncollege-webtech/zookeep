@@ -169,17 +169,15 @@ displayAnimalGallery(animals);
 
 
 function propertyEquals(propertyName, value) {
-    return function(specify) {
-        return (specify[propertyName] === value);
+    return function(object) {
+        return (object[propertyName] === value);
     };
 }
 
-var filteredArray = propertyEquals("name", "Taylor");
-var featured = animals.filter(filteredArray);
+var featured = animals.filter(propertyEquals("name", "Taylor"));
 
 /*global displayFeaturedAnimal */
 displayFeaturedAnimal(featured[0]);
-
 
 var ages = animals.map(function(value) {
     return {
@@ -189,8 +187,8 @@ var ages = animals.map(function(value) {
     };
 });
 
+ages.sort(sortBy("age"));
+
 /*global displayAnimalAges */
-displayAnimalAges(ages.sort(function(a, b) {
-    return a.age - b.age;
-}));
+displayAnimalAges(ages);
 
