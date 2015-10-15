@@ -118,19 +118,45 @@ var animals = [{
   age: 11,
   image: "Polar_bear.jpg"
 }];
-
-
-
-
-animals.sort(function(a, b) {
-  if (a.name > b.name) {
-    return 1;
-  } else if (a.name < b.name) {
-    return -1;
+  
+function sortBy(prop, order) {
+  if( order >= 0 ){
+    return function(a,b) {
+      if (a[prop] > b[prop]) {
+        return 1;
+      } else if (a[prop] < b[prop]) {
+        return -1;
+      } else {
+        return 0;
+      }
+    };
   } else {
-    return 0;
+    return function(a,b) {
+      if (a[prop] < b[prop]) {
+        return 1;
+      } else if (a[prop] > b[prop]) {
+        return -1;
+      } else {
+        return 0;
+      }
+    };
   }
-});
+}
+function propertyEquals(propertyName, Name ) {
+  if (propertyName == "name") {
+    return function(){
+      if (name == "Taylor") {
+        return true;
+      } else {
+        return false;
+      };
+    }
+   }  else {
+        return false
+  }
+}
+
+animals.sort(sortBy("name",1));
 
 var featured = animals.filter(function(xcom){
   if (xcom.name == "Taylor") {
@@ -140,17 +166,17 @@ var featured = animals.filter(function(xcom){
   }
 });
 
-var names = animals.map(function(a){
+var ages = animals.map(function(a){
   return {
     name: a.name,
     commonName: a.commonName,
     age: a.age,
   };
 });
-names.sort(function(a,b){
-    return (a.age - b.age);
-  });
+
+ages.sort(sortBy("age",1));
+console.log(propertyEquals('name', 'Taylor'));
   
-displayAnimalAges(names) 
+displayAnimalAges(ages);
 displayAnimalGallery(animals);
 displayFeaturedAnimal(featured[0]);
