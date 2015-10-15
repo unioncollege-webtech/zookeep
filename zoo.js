@@ -161,6 +161,17 @@ function sortBy(propName, order){ //Not using order yet. Fix it.
   }
 }
 
+function pick(){
+  args = arguments;
+  return function(obj){
+    var output = {};
+    for(var i = 0; i < args.length; i++){
+      output[args[i]] = obj[args[i]]
+    }
+    return output;
+  }
+}
+
 function propEquals(prop, value){
   //Filter function, returns true or false -- see fox
   return function(obj){
@@ -183,17 +194,6 @@ var ages = animals.map(function(obj){
     age: obj.age
   }
 });
-
-function pick(){
-  args = arguments
-  return function(obj){
-    var output = {};
-    for(var i = 0; i < args.length; i++){
-      output[args[i]] = obj[args[i]]
-    }
-    return output;
-  }
-}
 
 var ages = animals.map(pick("name","commonName","age"));
 
