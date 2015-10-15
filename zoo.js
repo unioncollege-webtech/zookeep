@@ -137,27 +137,44 @@ var animals = [
   }
 ];
 
-function sortBy(propName){
-  return function(a,b){
-    if ( a[propName] > b[propName] ){
-      return 1;
-    } else if ( b[propName] > a[propName] ){
-      return -1;
-    } else {
-      return 0;
+function sortBy(propName, order){ //Not using order yet. Fix it.
+  if ( order <= 0 ){
+    return function(a,b){
+      if ( a[propName] < b[propName] ){
+        return 1;
+      } else if ( b[propName] < a[propName] ){
+        return -1;
+      } else {
+        return 0;
+      }
+    }
+  } else {
+    return function(a,b){
+      if ( a[propName] > b[propName] ){
+        return 1;
+      } else if ( b[propName] > a[propName] ){
+        return -1;
+      } else {
+        return 0;
+      }
     }
   }
 }
 
-animals.sort(sortBy("name"));
+function propEquals(prop, value){
+  //Filter function, returns true or false -- see fox
+  return function(obj){
+    if ( obj[prop] == value ){
+      return true;
+    } else {
+      return false;
+    }
+  };
+}
 
-var featured = animals.filter(function(obj){
-  if ( obj.name == "Taylor"){
-    return true;
-  } else {
-    return false;
-  }
-});
+animals.sort(sortBy("name", 1));
+
+var featured = animals.filter(propEquals("name", "Taylor"));
 
 var ages = animals.map(function(obj){
   return {
@@ -167,7 +184,20 @@ var ages = animals.map(function(obj){
   }
 });
 
-ages.sort(sortBy("age"));
+function pick(){
+  args = arguments
+  return function(obj){
+    var output = {};
+    for(var i = 0; i < args.length; i++){
+      output[args[i]] = obj[args[i]]
+    }
+    return output;
+  }
+}
+
+var ages = animals.map(pick("name","commonName","age"));
+
+ages.sort(sortBy("age", 1));
 
 displayAnimalGallery(animals);
 displayFeaturedAnimal(featured[0]);
