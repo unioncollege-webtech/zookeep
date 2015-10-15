@@ -157,16 +157,39 @@ var animals = [
 ];
 
 animals.sort(function(a, b) {
-    if (a.name > b.name) {
+    if (a.name < b.name) 
         return -1;
     if (a.name > b.name)
         return 1;
-    return 0;
+    else return 0;
+    
+});
+
+
+/*get = name["Taylor"];
+name["Taylor"] = set;
+
+displayAnimalGallery(animals);
+*/
+
+function featured(animals) {
+   return animals = "Taylor";
+
+var filtered = []
+//}
+
+//arr.filter(featured[index])
+
+//var displayAnimalGallery = (animals);
+
+//console.log(displayAnimalGallery);
+
+
+
+
+/*function sortBy(propertyName) {
+    return fucntion(a, b) 
+        if  
     }
-
-objs.sort(compare);
 }
-
-//var displayAnimalGallery = (animals)
-
-//console.log(displayAnimalGallery)
+*/
