@@ -120,7 +120,7 @@ var animals = [{
 }];
 var sortByAge = sortBy("age");
 var sortByName = sortBy("name");
-var filterName = propertyEquals('name','Taylor');
+var filterName = propertyEquals('name', 'Taylor');
 var picks = pick('name', 'commonName', 'age');
 
 animals.sort(sortByName);
@@ -143,29 +143,26 @@ function sortBy(prop) {
             return a[prop] - b[prop];
         }
     }
-    else {
-        console.log("name")
+    else if (prop === "name") {
         return function(a, b) {
             var A = a[prop].toLowerCase();
             var B = b[prop].toLowerCase();
             return A < B ? -1 : A > B ? 1 : 0;
         }
     }
-
 }
 
-function propertyEquals(propertyName, propValue){
+function propertyEquals(propertyName, propValue) {
     return function(value) {
-        return (value[propertyName] == propValue)
+        return (value[propertyName] === propValue)
     }
 }
 
-function pick(){
+function pick() {
     var args = arguments;
-    return function(value){
+    return function(value) {
         var item = {};
-        for(var i = 0; i < args.length; i++)
-        {
+        for (var i = 0; i < args.length; i++) {
             item[args[i]] = value[args[i]];
         }
         return item;
