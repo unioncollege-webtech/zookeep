@@ -137,23 +137,53 @@ var animals = [
   }
 ];
 
-animals.sort(function(a, b){
-    if(a.name < b.name){
+function sortBy(propertyName, order) {
+  if (order >= 0) {
+    return function(a, b) {
+      if (a[propertyName] < b[propertyName]) {
         return -1;
-    }
-    else if(a.name > b.name){
+      }
+      else if (a[propertyName] > b[propertyName]) {
         return 1;
-    }
-    else{
+      }
+      else {
         return 0;
-    }
-});
+      }
+    };
+  } else {
+    return function(a, b) {
+      if (a[propertyName] > b[propertyName]) {
+        return -1;
+      }
+      else if (a[propertyName] < b[propertyName]) {
+        return 1;
+      }
+      else {
+        return 0;
+      }
+    };
+  }
+}
+
+// function sortBy(a, b){
+//       if(a.name < b.name){
+//         return -1;
+//     }
+//     else if(a.name > b.name){
+//         return 1;
+//     }
+//     else{
+//         return 0;
+//     }
+// }
+
+animals.sort(sortBy("name",1));
 
 var featured = animals.filter(function(n){
     if(n.name == "Taylor"){
-        return 1;
+        return true;
     } else {
-        return 0;
+        return false;
     }
 });
 
@@ -165,9 +195,11 @@ var ages = animals.map(function(i){
   };
 });
 
-ages.sort(function(a,b){
-  return a.age - b.age;
-});
+// function sortBy(propertyName){
+//   return a.ages - b.ages;  
+// }
+
+ages.sort(sortBy("age",1));
 
 displayAnimalGallery(animals);
 displayFeaturedAnimal(featured[0]);
