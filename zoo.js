@@ -136,44 +136,49 @@ var animals = [
 	image: "Polar_bear.jpg"
 }];
 
-animals.sort(function(a, b) {
-    if (a.name < b.name) {
-        return -1;
-    } else if (a.name > b.name) {
-        return 1;
-    } else {
-        return 0;
-    }
-});
+function sortBy(propertyName) {
+    return function(a, b) {
+        if (a[propertyName] < b[propertyName]) {
+            return -1;
+        } else if (a[propertyName] > b[propertyName]) {
+            return 1;
+        } else {
+            return 0;
+        }
+    };
+}
 
+function propertyEquals(propertyName, value) {
+    return function(obj) {
+        if (obj[propertyName] == value) {
+            return true;
+        }
+        return false;
+    };
+}
+
+function pick() {
+    var properties = arguments;
+    return function(obj) {
+        var result = {};
+        for (var i = 0; i < properties.length; i++) {
+            result[properties[i]] = obj[properties[i]];
+        }
+        return result;
+    };
+}
+
+// Display animal gallery (sorted by name)
+animals.sort(sortBy('name'));
 displayAnimalGallery(animals);
 
-var featured = animals.filter(function(animal) {
-    if (animal.name == "Taylor") {
-        return true;
-    }
-    return false;
-});
 
+// Display featured animal
+var featured = animals.filter(propertyEquals('name', 'Taylor'));
 displayFeaturedAnimal(featured[0]);
 
-var ages = [];
-animals.map(function(animal) {
-   ages.push({
-       name: animal.name,
-       commonName: animal.commonName,
-       age: animal.age
-   });
-});
 
-ages.sort(function(a, b) {
-    if (a.age < b.age) {
-        return -1;
-    } else if (a.age > b.age) {
-        return 1;
-    } else {
-        return 0;
-    }
-});
-
+// Display animal ages (sorted by age)
+var ages = animals.map(pick('name', 'commonName', 'age'));
+ages.sort(sortBy('age'));
 displayAnimalAges(ages);
