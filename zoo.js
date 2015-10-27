@@ -138,17 +138,15 @@ displayAnimalAges(ages)
 
 
 function sortBy(prop, ignoreCase) {
-    if(!ignoreCase)
+    if (!ignoreCase)
         return function(a, b) {
             return a[prop] < b[prop] ? -1 : a[prop] > b[prop] ? 1 : 0;
         }
     else
         return function(a, b) {
-            return function(a, b) {
             var A = a[prop].toLowerCase();
             var B = b[prop].toLowerCase();
             return A < B ? -1 : A > B ? 1 : 0;
-        }
         }
 }
 
