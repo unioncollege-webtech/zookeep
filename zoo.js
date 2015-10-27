@@ -137,26 +137,14 @@ var animals = [
   }
 ];
 
-function sortBy(propName, order){ //Not using order yet. Fix it.
-  if ( order <= 0 ){
-    return function(a,b){
-      if ( a[propName] < b[propName] ){
-        return 1;
-      } else if ( b[propName] < a[propName] ){
-        return -1;
-      } else {
-        return 0;
-      }
-    }
-  } else {
-    return function(a,b){
-      if ( a[propName] > b[propName] ){
-        return 1;
-      } else if ( b[propName] > a[propName] ){
-        return -1;
-      } else {
-        return 0;
-      }
+function sortBy(propName){ //Not using order yet. Fix it.
+  return function(a,b){
+    if ( a[propName] > b[propName] ){
+      return 1;
+    } else if ( b[propName] > a[propName] ){
+      return -1;
+    } else {
+      return 0;
     }
   }
 }
