@@ -165,40 +165,41 @@ function sortBy(propertyName, order) {
   }
 }
 
-// function sortBy(a, b){
-//       if(a.name < b.name){
-//         return -1;
-//     }
-//     else if(a.name > b.name){
-//         return 1;
-//     }
-//     else{
-//         return 0;
-//     }
-// }
-
-animals.sort(sortBy("name",1));
-
-var featured = animals.filter(function(n){
-    if(n.name == "Taylor"){
-        return true;
-    } else {
-        return false;
+function pick(){
+  a = arguments;
+  return function(obj){
+    var final = {};
+    for(var i = 0; i < a.length; i++){
+      final[a[i]] = final[a[i]]
     }
-});
+    return final;
+  }
+}
 
-var ages = animals.map(function(i){
+function propertyEquals(propertyName, value){
+  return function(obj){
+  if(obj[propertyName] == value){
+    return true;
+  } else{
+    return false;
+  }
+ };
+}
+
+// console.log(animals.propertyEquals("Taylor"));
+
+var featured = animals.filter(propertyEquals("name", "Taylor")
+
+var ages = animals.map(function(obj){
   return{
-    name: i.name,
-    commonName: i.commonName,
-    age: i.age
+    name: obj.name,
+    commonName: obj.commonName,
+    age: obj.age
   };
 });
 
-// function sortBy(propertyName){
-//   return a.ages - b.ages;  
-// }
-
+animals.map(pick("name","commonName","age"));
+animals.sort(sortBy("name",1));
 ages.sort(sortBy("age",1));
 
 displayAnimalGallery(animals);
