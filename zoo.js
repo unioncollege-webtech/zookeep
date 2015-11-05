@@ -166,14 +166,14 @@ function sortBy(propertyName, order) {
 }
 
 function pick(){
-  a = arguments;
+ var a = arguments;
   return function(obj){
     var final = {};
     for(var i = 0; i < a.length; i++){
-      final[a[i]] = final[a[i]]
+      final[a[i]] = final[a[i]];
     }
     return final;
-  }
+  };
 }
 
 function propertyEquals(propertyName, value){
@@ -188,7 +188,7 @@ function propertyEquals(propertyName, value){
 
 // console.log(animals.propertyEquals("Taylor"));
 
-var featured = animals.filter(propertyEquals("name", "Taylor")
+var featured = animals.filter(propertyEquals("name", "Taylor"));
 
 var ages = animals.map(function(obj){
   return{
