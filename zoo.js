@@ -80,7 +80,7 @@ var animals = [
         species: "Burhinus capensus",
         location: "Rodeheaver Desert",
         age: 5,
-        image: "Cape_thick-knee.jpg."
+        image: "Cape_thick-knee.jpg"
     },
 
     {
@@ -157,16 +157,45 @@ var animals = [
 ];
 
 animals.sort(function(a, b) {
-    if (a.name > b.name) {
+    if (a.name < b.name) 
         return -1;
     if (a.name > b.name)
         return 1;
-    return 0;
-    }
+    else return 0;
+    
+});
 
-objs.sort(compare);
-}
 
-//var displayAnimalGallery = (animals)
 
-//console.log(displayAnimalGallery)
+displayAnimalGallery(animals);
+
+
+
+var featured = animals.filter(function(animal) {
+    
+    return animal.name === "Taylor";
+});
+
+
+
+displayFeaturedAnimal(featured[0]);
+
+
+
+var ages = animals.map(function(index) {
+    return {
+       name: index.name,
+       commonName: index.commonName,
+       age: index.age
+    }});
+
+ages.sort(function(a, b) {
+    return a.age - b.age;
+   
+});
+
+
+displayAnimalAges(ages);
+
+
+
