@@ -166,30 +166,30 @@ animals.sort(function(a, b) {
 });
 
 
-/*get = name["Taylor"];
-name["Taylor"] = set;
 
 displayAnimalGallery(animals);
-*/
 
-function featured(animals) {
-   return animals = "Taylor";
 
-var filtered = []
-//}
+var featured = ["Taylor"]animals.filter(name) {
+    
+    if name = "Taylor";
+    return true;
 
-//arr.filter(featured[index])
-
-//var displayAnimalGallery = (animals);
-
-//console.log(displayAnimalGallery);
+};
 
 
 
 
-/*function sortBy(propertyName) {
-    return fucntion(a, b) 
-        if  
-    }
-}
-*/
+displayFeaturedAnimal(featured[0]);
+
+
+
+/*var ages = [name, commonName, age].map()
+
+
+ages.sort(function(a, b) {
+    if (a.)
+})
+
+
+displayAnimalAges(ages)
