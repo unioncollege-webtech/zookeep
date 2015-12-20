@@ -156,44 +156,14 @@ var animals = [
     },
 ];
 
-animals.sort(function(a, b) {
-    if (a.name < b.name) 
-        return -1;
-    if (a.name > b.name)
-        return 1;
-    else return 0;
+function sortBy(property){
     
-});
+}
 
-
-
-displayAnimalGallery(animals);
-
-
-var featured = animals.filter(function(animal) {
-    
-    return animal.name === "Taylor";
-
-});
-
-
-
-
-displayFeaturedAnimal(featured[0]);
-
-
-
-var ages = animals.map(function(index) {
-    return {
-        name: index.name,
-        commonName: index.commonName,
-        age: index.age
-    }});
-    
-ages.sort(function(a, b) {
-    return a.age - b.age;
-});
-
-
-displayAnimalAges(ages);
+//msdn
+function propertyEquals(pName, pValue) {
+    return function(equals) {
+        return (equals[pName] === pValue);
+    };
+}
 
