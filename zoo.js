@@ -28,8 +28,14 @@ animals.push( new Animal("Mooney", "Blue monkey", "Cercopithecus mitis", "Smith 
               new Animal("Kimani",	"Siberian tiger",	"Panthera tigris altaica",	"Kond Cat Complex",	9,	"Siberian_tiger.jpg"),
               new Animal("Antipode",	"Polar bear",	"Ursus maritimus",	"Moser Canyon",	11,	"Polar_bear.jpg") );
 
+function firstNameSort(a, b) {
+  if(a.name > b.name) return 1;
+  if(a.name < b.name) return -1;
+  return 0;
+}
+
 //Sort the animals alphabetically by name
-animals.sort();
+animals.sort(firstNameSort);
 displayAnimalGallery(animals);
 
 //Used with filter to find the animal name passed in
