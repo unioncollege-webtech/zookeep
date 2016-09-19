@@ -1,0 +1,47 @@
+.animal--image {
+  height: auto;
+  width: 100px;
+  -webkit-transition: width 0.5s, height 0.5s, background-color 0.5s, -webkit-transform 0.5s;
+  transition: width 0.5s, height 0.5s, background-color 0.5s, transform 0.5s;
+}
+
+.animal--image:hover {
+  height: auto;
+  min-height: 100px;
+  width: 350px;
+}
+
+.animal--table {
+    border-collapse: collapse;
+    width: 50%;
+    margin: auto;
+    border: 1px solid #ddd;
+}
+
+.animal--table thead {
+    background: #3a72b4;
+    border: 1px solid #3a72b4;
+    color: white;
+}
+
+.animal--table tbody td {
+  border: 1px solid #3a72b4;
+  margin: 0;
+  padding: 10px;
+}
+
+.animal--table tbody td:nth-child(4) {
+  padding: 4px 4px 0px 4px;
+}
+
+.animal--table tbody tr:nth-child(odd) {
+  background-color: #E6EFF2;
+}
+
+.animal--table tbody tr:nth-child(even) {
+    background-color: #AAC9D4;
+}
+
+.attribution {
+    text-align: left;
+}
