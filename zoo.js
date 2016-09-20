@@ -13,142 +13,142 @@ the script. */
 
 var animals = [];
 
-animals[0] = {
+animals.push({
     name: "Mooney",
     commonName: "Blue monkey",
     species: "Cercopithecus mitis",
     location: "Smith Jungle",
     age: 2,
     image: "Blue_monkey.jpg",
-};
-animals[1] = {
+});
+animals.push({
     name: "Sami",
     commonName: "Common squirrel monkey",
     species: "Saimiri sciureus",
     location: "Smith Jungle",
     age: 2,
     image: "Common_squirrel_monkey.jpg",
-};
-animals[2] = {
+});
+animals.push({
     name: "Chester",
     commonName: "Black howler monkey",
     species: "Alouatta caraya",
     location: "Smith Jungle",
     age: 5,
     image: "Black_howler_monkey.jpg",
-};
-animals[3] = {
+});
+animals.push({
     name: "Scarborough",
     commonName: "Scarlet macaw",
     species: "Ara macao",
     location: "Smith Jungle",
     age: 3,
     image: "Scarlet_macaw.jpg",
-};
-animals[4] = {
+});
+animals.push({
     name: "Maverick",
     commonName: "Tufted puffin",
     species: "Fratercula cirrhata",
     location: "Birai Aquarium",
     age: 2,
     image: "Tufted_puffin.jpg",
-};
-animals[5] = {
+});
+animals.push({
     name: "Puck",
     commonName: "Little penguin",
     species: "Eudyptula minor",
     location: "Birai Aquarium",
     age: 4,
     image: "Little_penguin.jpg",
-};
-animals[6] = {
+});
+animals.push({
     name: "Tweed",
     commonName: "Leafy sea dragon",
     species: "Phycodurus eques",
     location: "Birai Aquarium",
     age: 1,
     image: "Leafy_seadragon.jpg",
-};
-animals[7] = {
+});
+animals.push({
     name: "Taylor",
     commonName: "Swift fox",
     species: "Vulpes velox",
     location: "Rodeheaver Desert",
     age: 9,
     image: "Swift_fox.jpg",
-};
-animals[8] = {
+});
+animals.push({
     name: "Trip",
     commonName: "Cape thick-knee",
     species: "Burhinus capensus",
     location: "Rodeheaver Desert",
     age: 5,
     image: "Cape_thick-knee.jpg",
-};
-animals[9] = {
+});
+animals.push({
     name: "Helios",
     commonName: "Mantled guereza",
     species: "Colobus guereza",
     location: "Fagan Valley",
     age: 11,
     image: "Mantled_guereza.jpg",
-};
-animals[10] = {
+});
+animals.push({
     name: "Asteria",
     commonName: "Western lowland gorilla",
     species: "Gorilla gorilla gorilla",
     location: "Fagan Valley",
     age: 5,
     image: "Western_lowland_gorilla.jpg",
-};
-animals[11] = {
+});
+animals.push({
     name: "Perses",
     commonName: "Wolf's mona monkey",
     species: "Cercopithecus wolfi",
     location: "Fagan Valley",
     age: 10,
     image: "Wolfs_mona_monkey.jpg",
-};
-animals[12] = {
+});
+animals.push({
     name: "Pip",
     commonName: "Red river hog",
     species: "Potamochoerus porcus",
     location: "Fagan Valley",
     age: 4,
     image: "Red_river_hog.jpg",
-};
-animals[13] = {
+});
+animals.push({
     name: "Skrytnaya",
     commonName: "Amur leopard",
     species: "Panthera pardus orientalis",
     location: "Kond Cat Complex",
     age: 8,
     image: "Amur_leopard.jpg",
-};
-animals[14] = {
+});
+animals.push({
     name: "Matadi",
     commonName: "African lion",
     species: "Panthera leo",
     location: "Kond Cat Complex",
     age: 6,
     image: "African_lion.jpg",
-};
-animals[15] = {
+});
+animals.push({
     name: "Kimani",
     commonName: "Siberian tiger",
     species: "Panthera tigris altaica",
     location: "Kond Cat Complex",
     age: 9,
     image: "Siberian_tiger.jpg",
-};
-animals[16] = {
+});
+animals.push({
     name: "Antipode",
     commonName: "Polar bear",
     species: "Ursus maritimus",
     location: "Moser Canyon",
     age: 11,
     image: "Polar_bear.jpg",
-};
+});
 
 animals.sort(function(a, b) {
     return a.name.localeCompare(b.name);
