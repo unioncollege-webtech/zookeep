@@ -1,7 +1,5 @@
 var animals = [
  
-
-
      {
          name: "Mooney",
          commonName: "Blue Monkey",
@@ -39,7 +37,7 @@ var animals = [
      },
  
      {
-       name: "Maverick",
+         name: "Maverick",
          commonName: "Tufted puffin",
          species: "Fratercula cirrhata",
          location: "Birai Aquarium",
@@ -165,23 +163,15 @@ var animals = [
      
  });
  
- 
- 
  displayAnimalGallery(animals);
- 
-
  
  var featured = animals.filter(function(animal) {
      
      return animal.name === "Taylor";
  });
  
-
- 
  displayFeaturedAnimal(featured[0]);
- 
- 
- 
+
  var ages = animals.map(function(index) {
      return {
        name: index.name,
@@ -193,6 +183,5 @@ var animals = [
      return a.age - b.age;
     
  });
- 
  
  displayAnimalAges(ages);
